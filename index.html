@@ -1,0 +1,1221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>King Technology Solutions</title>
+<meta name="description" content="King Technology Solutions LLC: end-to-end event management (observability + ITSM), security operations, and zero-inventory technology procurement and deployment for schools, libraries, public entities and businesses.">
+<link rel="canonical" href="https://www.kingtechsolutionsgroup.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#F3F5F8;
+  --surface:#FFFFFF;
+  --surface-2:#E8ECF2;
+  --ink:#0F1A2C;
+  --ink-2:#3F4B63;
+  --ink-3:#66728A;
+  --line:#D4DAE4;
+  --band:#13213D;
+  --band-2:#1B2C4E;
+  --band-line:#2B3E64;
+  --on-band:#EEF1F6;
+  --on-band-2:#AEB9CE;
+  --gold:#A8740F;
+  --gold-fill:#E2A330;
+  --teal:#1B7A74;
+  --teal-fill:#2E9C94;
+  --focus:#2E6BE6;
+  --display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --body:"IBM Plex Sans",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --wrap:1180px;
+  --gutter:clamp(16px,4vw,40px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ground:#0B111B;--surface:#121A28;--surface-2:#182234;
+    --ink:#E7EBF2;--ink-2:#AEB8CA;--ink-3:#808BA1;--line:#243149;
+    --band:#0F1930;--band-2:#16233F;--band-line:#2A3B5E;--on-band:#EEF1F6;--on-band-2:#A5B1C8;
+    --gold:#F0B645;--gold-fill:#E8AA36;--teal:#5BC2B9;--teal-fill:#3EA69D;--focus:#7AA5FF;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#0B111B;--surface:#121A28;--surface-2:#182234;
+  --ink:#E7EBF2;--ink-2:#AEB8CA;--ink-3:#808BA1;--line:#243149;
+  --band:#0F1930;--band-2:#16233F;--band-line:#2A3B5E;--on-band:#EEF1F6;--on-band-2:#A5B1C8;
+  --gold:#F0B645;--gold-fill:#E8AA36;--teal:#5BC2B9;--teal-fill:#3EA69D;--focus:#7AA5FF;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--ground);color:var(--ink);font:400 16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+h1,h2,h3{font-family:var(--display);font-stretch:112%;line-height:1.05;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:clamp(1.9rem,3.6vw,2.9rem);font-weight:800}
+h3{font-size:1.25rem;font-weight:700;font-stretch:105%}
+p{margin:0}
+.eyebrow{font:500 .75rem/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.eyebrow b{color:var(--gold);font-weight:500}
+.lede{font-size:1.125rem;color:var(--ink-2);max-width:60ch}
+section{padding-block:clamp(64px,9vw,112px)}
+.sec-head{display:grid;gap:14px;max-width:760px;margin-bottom:clamp(36px,5vw,56px)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font:600 .95rem/1 var(--body);padding:14px 20px;border-radius:4px;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--ink);color:var(--ground)}
+.btn-ghost{border-color:var(--line);color:var(--ink);background:transparent}
+.btn-ghost:hover{background:var(--surface)}
+.btn .arr{font-family:var(--mono)}
+
+/* header */
+.site-head{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--ground) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.head-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand svg{flex:none}
+.brand-name{font:800 1.02rem/1 var(--display);font-stretch:118%;letter-spacing:.01em}
+.brand-sub{display:block;font:500 .64rem/1.2 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-top:4px}
+.nav{display:flex;align-items:center;gap:20px}
+.nav a{font-size:.9rem;font-weight:500;text-decoration:none;color:var(--ink-2);white-space:nowrap}
+.brand-name{white-space:nowrap}
+.nav a:hover{color:var(--ink)}
+.nav .btn{padding:10px 16px;color:var(--ground)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:4px;color:var(--ink);font:500 .8rem/1 var(--mono);padding:10px 12px;cursor:pointer}
+@media (max-width:1180px){
+  .menu-btn{display:inline-block}
+  .nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--ground);border-bottom:1px solid var(--line);padding:8px var(--gutter) 18px}
+  .nav.open{display:flex}
+  .nav a{padding:12px 0;border-bottom:1px solid var(--line)}
+  .nav .btn{margin-top:14px;justify-content:center;border-bottom:0}
+}
+
+/* hero */
+.hero{padding-block:clamp(48px,7vw,88px) clamp(56px,8vw,96px)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,64px);align-items:center}
+.hero h1{font-size:clamp(2.6rem,6.4vw,5.1rem);font-weight:850;font-stretch:118%;margin-block:18px 22px}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero .lede{margin-bottom:30px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.pillars{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:34px;padding-top:22px;border-top:1px solid var(--line)}
+.pillars span{font:500 .78rem/1.3 var(--mono);color:var(--ink-2)}
+.pillars span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:8px;background:var(--c,var(--ink-3));vertical-align:0}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr}}
+
+/* trace panel */
+.trace{margin:0;background:var(--band);color:var(--on-band);border-radius:8px;padding:20px 20px 16px;box-shadow:0 30px 60px -30px rgba(10,20,40,.45);font-family:var(--mono);min-width:0}
+.trace-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.72rem;color:var(--on-band-2);padding-bottom:14px;border-bottom:1px solid var(--band-line)}
+.trace-top strong{color:var(--on-band);font-weight:500}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--teal-fill);margin-right:7px;box-shadow:0 0 0 3px color-mix(in srgb,var(--teal-fill) 30%,transparent);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 6px color-mix(in srgb,var(--teal-fill) 0%,transparent)}}
+.spans{display:grid;gap:7px;margin-top:14px}
+.span{display:grid;grid-template-columns:minmax(0,44%) 1fr;gap:12px;align-items:center;font-size:.72rem}
+.span-name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--on-band-2)}
+.span-name i{font-style:normal;color:var(--on-band)}
+.track{position:relative;height:14px;background:repeating-linear-gradient(90deg,transparent 0 calc(25% - 1px),var(--band-line) calc(25% - 1px) 25%)}
+.bar{position:absolute;top:2px;bottom:2px;left:var(--s);width:var(--w);border-radius:2px;background:var(--c)}
+.bar.live{background:linear-gradient(90deg,var(--c) 0 40%,color-mix(in srgb,var(--c) 45%,transparent) 50%,var(--c) 60%);background-size:250% 100%;animation:sweep 2.8s linear infinite}
+@keyframes sweep{from{background-position:100% 0}to{background-position:-150% 0}}
+.axis{display:grid;grid-template-columns:minmax(0,44%) 1fr;gap:12px;margin-top:10px;font-size:.66rem;color:var(--on-band-2)}
+.axis-ticks{display:flex;justify-content:space-between}
+.trace-legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:14px;padding-top:12px;border-top:1px solid var(--band-line);font-size:.68rem;color:var(--on-band-2)}
+.trace-legend span::before{content:"";display:inline-block;width:10px;height:6px;border-radius:1px;background:var(--c);margin-right:6px;vertical-align:1px}
+.c-sec{--c:#C8574A}.c-cmdb{--c:#8A6FC4}.c-obs{--c:var(--teal-fill)}.c-itsm{--c:#8EA6DC}.c-proc{--c:var(--gold-fill)}.c-site{--c:#C9D2E3}
+
+/* positioning */
+.where{background:var(--surface);border-block:1px solid var(--line)}
+.where-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:start}
+.where-copy{display:grid;gap:20px}
+.where-copy p{color:var(--ink-2);max-width:60ch}
+.fit{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:0;border-top:1px solid var(--line)}
+.fit li{padding:13px 0 13px 28px;border-bottom:1px solid var(--line);position:relative;color:var(--ink)}
+.fit li::before{content:"→";position:absolute;left:0;font-family:var(--mono);color:var(--gold)}
+.stack{display:grid;gap:10px;font-family:var(--mono);font-size:.8rem}
+.tier{border:1px solid var(--line);border-radius:6px;padding:18px 20px;display:grid;gap:6px;background:var(--ground)}
+.tier .t-label{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.tier .t-name{font:700 1.05rem/1.25 var(--display);font-stretch:108%;color:var(--ink)}
+.tier .t-note{color:var(--ink-2);font-family:var(--body);font-size:.9rem}
+.tier.top{border-style:dashed}
+.tier.us{background:var(--band);border-color:var(--band);color:var(--on-band);padding-block:24px}
+.tier.us .t-label{color:var(--gold-fill)}
+.tier.us .t-name{color:var(--on-band);font-size:1.25rem}
+.tier.us .t-note{color:var(--on-band-2)}
+.connector{display:flex;justify-content:center;color:var(--ink-3);font-size:.72rem;gap:10px;align-items:center}
+.connector::before,.connector::after{content:"";height:1px;flex:1;max-width:80px;background:var(--line)}
+.gap-tag{font-size:.7rem;color:var(--ink-3);text-align:center}
+@media (max-width:900px){.where-grid{grid-template-columns:1fr}}
+
+/* services */
+.practices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:2px solid var(--ink)}
+.practice{padding:28px 28px 32px 0;display:grid;gap:14px;align-content:start}
+.practice + .practice{padding-left:28px;border-left:1px solid var(--line)}
+.practice .sig{font:500 .72rem/1 var(--mono);color:var(--gold);letter-spacing:.04em}
+.practice h3{font-size:1.45rem}
+.practice > p{color:var(--ink-2)}
+.practice ul{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:10px}
+.practice li{padding-left:18px;position:relative;font-size:.95rem}
+.practice li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:2px;background:var(--teal)}
+@media (max-width:900px){
+  .practices{grid-template-columns:1fr}
+  .practice,.practice + .practice{padding:26px 0;border-left:0;border-bottom:1px solid var(--line)}
+}
+
+/* loop */
+.loop{margin-top:clamp(48px,7vw,80px);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:clamp(24px,4vw,40px);display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,4vw,48px);align-items:center}
+.loop h3{font-size:clamp(1.4rem,2.4vw,1.8rem);margin-bottom:12px}
+.loop p{color:var(--ink-2)}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font:500 .8rem/1 var(--mono)}
+.flow .node{padding:12px 14px;border:1px solid var(--line);border-radius:4px;background:var(--ground)}
+.flow .node small{display:block;color:var(--ink-3);font-size:.64rem;margin-top:6px;letter-spacing:.04em}
+.flow .node.obs{border-color:color-mix(in srgb,var(--teal) 55%,var(--line))}
+.flow .node.itsm{border-color:color-mix(in srgb,#5E7BC0 55%,var(--line))}
+.flow .sep{color:var(--ink-3)}
+.flow .back{flex-basis:100%;color:var(--ink-3);font-size:.7rem;margin-top:4px}
+@media (max-width:900px){.loop{grid-template-columns:1fr}}
+
+
+/* event management flagship */
+.em + .em{margin-top:20px}
+.flow .node.sec{border-color:color-mix(in srgb,#C8574A 55%,var(--line))}
+.em{border:2px solid var(--ink);border-radius:8px;background:var(--surface);overflow:hidden}
+.em-head{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,48px);align-items:center;padding:clamp(22px,4vw,40px)}
+.em-head h3{font-size:clamp(1.5rem,2.8vw,2.1rem);margin:12px 0 14px}
+.em-head p{color:var(--ink-2)}
+.em-plat{margin-top:12px;font:500 .8rem/1.5 var(--mono);color:var(--ink-3)!important}
+.flag{display:inline-block;font:500 .7rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:var(--ground);padding:6px 9px;border-radius:3px}
+.subs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);background:var(--ground)}
+.sub{padding:24px clamp(18px,2.4vw,28px);display:grid;gap:10px;align-content:start}
+.sub + .sub{border-left:1px solid var(--line)}
+.sub h4{margin:0;font:700 1.12rem/1.2 var(--display);font-stretch:106%}
+.sub .sig,.proc-row .sig{font:500 .72rem/1 var(--mono);color:var(--gold);letter-spacing:.04em}
+.sub ul,.proc-row ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.sub li,.proc-row li{padding-left:18px;position:relative;font-size:.94rem}
+.sub li::before,.proc-row li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:2px;background:var(--teal)}
+.proc-row{margin-top:20px;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(20px,4vw,48px);padding:clamp(22px,4vw,36px);border:1px solid var(--line);border-radius:8px;align-items:start}
+.proc-row h3{font-size:1.45rem;margin:10px 0 12px}
+.proc-row p{color:var(--ink-2)}
+@media (max-width:900px){.em-head,.proc-row{grid-template-columns:1fr}.subs{grid-template-columns:1fr}.sub + .sub{border-left:0;border-top:1px solid var(--line)}}
+
+
+/* market pulse */
+.pulse{background:var(--surface);border-block:1px solid var(--line)}
+.pulse-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:clamp(24px,4vw,48px);align-items:start}
+.moves{display:grid;gap:0;border-top:2px solid var(--ink)}
+.move{display:grid;grid-template-columns:92px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+.move time{font:500 .72rem/1.4 var(--mono);color:var(--ink-3);letter-spacing:.04em}
+.move .tag{display:block;font:500 .66rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
+.move h3{font-size:1.08rem;font-stretch:104%;line-height:1.3;margin-bottom:6px}
+.move p{color:var(--ink-2);font-size:.93rem}
+.move p b{color:var(--ink);font-weight:600}
+.move .src{font:500 .72rem/1 var(--mono);color:var(--ink-3);white-space:nowrap;margin-left:2px}
+.move .src:hover{color:var(--ink)}
+.index{border:1px solid var(--line);border-radius:8px;background:var(--ground);padding:20px;position:sticky;top:90px}
+.index h3{font-size:1.1rem;margin-bottom:4px}
+.index .ix-sub{font-size:.85rem;color:var(--ink-3);margin-bottom:14px}
+.index table{width:100%;border-collapse:collapse;font-size:.85rem}
+.index th{font:500 .66rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);text-align:left;padding:0 0 8px;border-bottom:1px solid var(--line)}
+.index td{padding:9px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.index td:first-child{font:500 .8rem var(--mono);color:var(--ink);padding-right:10px;white-space:nowrap}
+.index td:last-child{text-align:right;font-family:var(--mono);color:var(--ink-3);font-variant-numeric:tabular-nums}
+.index .ix-note{margin-top:12px;font-size:.78rem;color:var(--ink-3)}
+@media (max-width:900px){.pulse-grid{grid-template-columns:1fr}.index{position:static}.move{grid-template-columns:1fr;gap:4px}}
+
+/* procurement band */
+.band{background:var(--band);color:var(--on-band)}
+.band .eyebrow{color:var(--on-band-2)}
+.band .eyebrow b{color:var(--gold-fill)}
+.band .lede{color:var(--on-band-2)}
+.band h2 em{font-style:normal;color:var(--gold-fill)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;counter-reset:s;border-top:1px solid var(--band-line)}
+.steps li{counter-increment:s;padding:22px 18px 22px 0;display:grid;gap:8px;align-content:start}
+.steps li + li{padding-left:18px;border-left:1px solid var(--band-line)}
+.steps li::before{content:counter(s,decimal-leading-zero);font:500 .74rem/1 var(--mono);color:var(--gold-fill)}
+.steps strong{font:700 1.02rem/1.25 var(--display);font-stretch:108%}
+.steps span{color:var(--on-band-2);font-size:.9rem}
+@media (max-width:980px){
+  .steps{grid-template-columns:1fr}
+  .steps li,.steps li + li{padding:18px 0;border-left:0;border-bottom:1px solid var(--band-line)}
+}
+.cats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--band-line);border:1px solid var(--band-line);border-radius:6px;overflow:hidden;margin-top:clamp(40px,6vw,64px)}
+.cat{background:var(--band-2);padding:22px;display:grid;gap:8px;align-content:start}
+.cat .code{font:500 .68rem/1 var(--mono);color:var(--on-band-2);letter-spacing:.08em}
+.cat h3{font-size:1.1rem;color:var(--on-band)}
+.cat p{font-size:.9rem;color:var(--on-band-2)}
+@media (max-width:900px){.cats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.cats{grid-template-columns:1fr}}
+.why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,4vw,40px);margin-top:clamp(40px,6vw,64px)}
+.why div{display:grid;gap:8px}
+.why strong{font:700 1.05rem/1.3 var(--display);font-stretch:108%;color:var(--gold-fill)}
+.why p{color:var(--on-band-2);font-size:.95rem}
+@media (max-width:800px){.why{grid-template-columns:1fr}}
+
+/* engagement */
+.models{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.model{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:26px;display:grid;gap:12px;align-content:start}
+.model .kind{font:500 .72rem/1 var(--mono);color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase}
+.model p{color:var(--ink-2);font-size:.95rem}
+.model .ex{font-size:.85rem;color:var(--ink-3);border-top:1px solid var(--line);padding-top:12px}
+@media (max-width:860px){.models{grid-template-columns:1fr}}
+
+/* field notes */
+.notes-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(32px,5vw,48px)}
+.notes-head .sec-head{margin-bottom:0}
+.notes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--line)}
+.note{padding:28px 28px 30px 0;border-bottom:1px solid var(--line);display:grid;gap:12px;align-content:start}
+.note:nth-child(even){padding-left:28px;padding-right:0;border-left:1px solid var(--line)}
+.note .tag{font:500 .7rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
+.note h3{font-size:clamp(1.2rem,2vw,1.45rem);font-stretch:104%;line-height:1.2}
+.note p{color:var(--ink-2)}
+@media (max-width:760px){.notes{grid-template-columns:1fr}.note,.note:nth-child(even){padding:24px 0;border-left:0}}
+.principle{font:500 .82rem/1.5 var(--mono);color:var(--ink-3);max-width:40ch}
+
+/* founder */
+.founder{background:var(--surface);border-block:1px solid var(--line)}
+.founder-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,80px);align-items:start}
+.founder-grid .quote{font:700 clamp(1.5rem,2.8vw,2.2rem)/1.2 var(--display);font-stretch:106%;text-wrap:balance}
+.founder-grid .quote em{font-style:normal;color:var(--gold)}
+.founder-card{margin-top:28px;padding-top:22px;border-top:1px solid var(--line);display:grid;gap:4px}
+.f-name{font:700 1.2rem/1.2 var(--display);font-stretch:110%}
+.f-role{font:500 .74rem/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--gold)}
+.f-bio{margin-top:0;color:var(--ink-2);font-size:.95rem;max-width:46ch}
+.creds{display:grid;gap:0;border-top:1px solid var(--line)}
+.cred{display:grid;grid-template-columns:170px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.cred dt{font:500 .74rem/1.5 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3)}
+.cred dd{margin:0;color:var(--ink-2)}
+@media (max-width:860px){.founder-grid{grid-template-columns:1fr}.cred{grid-template-columns:1fr;gap:6px}}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,72px);align-items:start}
+.contact-side{display:grid;gap:22px}
+.contact-side p{color:var(--ink-2)}
+.mail{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:16px;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+.mail code{font:500 .95rem/1.3 var(--mono);user-select:all;word-break:break-all}
+.copy{margin-left:auto;background:none;border:1px solid var(--line);border-radius:4px;color:var(--ink-2);font:500 .75rem/1 var(--mono);padding:8px 10px;cursor:pointer}
+form{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:clamp(20px,3.5vw,32px);display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:grid;gap:6px}
+.field.full{grid-column:1/-1}
+label{font:500 .74rem/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+input,select,textarea{font:400 1rem/1.4 var(--body);color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:4px;padding:12px;width:100%}
+textarea{min-height:120px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--focus);outline-offset:0;border-color:transparent}
+.form-foot{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.status{font-size:.9rem;color:var(--ink-2)}
+.status.ok{color:var(--teal)}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr}}
+@media (max-width:520px){form{grid-template-columns:1fr}}
+
+/* observability practice */
+.flow .node.dex{border-color:color-mix(in srgb,var(--gold) 55%,var(--line))}
+
+/* agentic lab */
+.lab{background:var(--surface);border-block:1px solid var(--line)}
+.lab-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,56px);align-items:start}
+.lab-copy{display:grid;gap:18px}
+.lab-copy p{color:var(--ink-2)}
+.ctl{display:grid;gap:8px}
+.ctl-label{font:500 .7rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.seg{display:flex;flex-wrap:wrap;border:1px solid var(--line);border-radius:5px;overflow:hidden;background:var(--ground)}
+.seg button{flex:1 1 auto;font:500 .85rem/1.2 var(--body);color:var(--ink-2);background:transparent;border:0;padding:10px 12px;cursor:pointer;min-width:0}
+.seg button + button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--ground)}
+.tier-note{font-size:.88rem;color:var(--ink-3);min-height:2.6em}
+.run-row{display:flex;flex-wrap:wrap;gap:10px}
+.run-row .btn{padding:11px 16px}
+.console{margin:0;background:var(--band);color:var(--on-band);border-radius:8px;padding:18px;font-family:var(--mono);box-shadow:0 30px 60px -30px rgba(10,20,40,.45);min-width:0;display:grid;gap:14px}
+.con-top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:.72rem;color:var(--on-band-2);padding-bottom:12px;border-bottom:1px solid var(--band-line)}
+.con-top strong{color:var(--on-band);font-weight:500}
+.clock{font-variant-numeric:tabular-nums;color:var(--gold-fill)}
+.pipe{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.pipe li{border:1px solid var(--band-line);border-radius:4px;padding:8px 6px;font-size:.62rem;line-height:1.25;color:var(--on-band-2);text-align:center;transition:background .25s ease,border-color .25s ease,color .25s ease;min-width:0}
+.pipe li b{display:block;font-weight:500;color:var(--on-band);font-size:.68rem;margin-bottom:2px}
+.pipe li.done{border-color:color-mix(in srgb,var(--teal-fill) 60%,var(--band-line));background:color-mix(in srgb,var(--teal-fill) 14%,transparent)}
+.pipe li.now{border-color:var(--gold-fill);background:color-mix(in srgb,var(--gold-fill) 22%,transparent);color:var(--on-band)}
+.pipe li.human.done{border-color:color-mix(in srgb,#8EA6DC 70%,var(--band-line));background:color-mix(in srgb,#8EA6DC 16%,transparent)}
+.pipe li.skip{opacity:.4;border-style:dashed}
+.log{list-style:none;margin:0;padding:0;display:grid;gap:0;min-height:260px;max-height:300px;overflow-y:auto;align-content:start;border-top:1px solid var(--band-line)}
+.log li{display:grid;grid-template-columns:48px 86px 1fr;gap:10px;padding:8px 0;border-bottom:1px solid var(--band-line);font-size:.74rem;line-height:1.45;color:var(--on-band-2)}
+.log time{color:var(--gold-fill);font-variant-numeric:tabular-nums}
+.log .who{color:var(--on-band);text-transform:uppercase;letter-spacing:.04em;font-size:.66rem;padding-top:1px}
+.log li.h .who{color:#8EA6DC}
+.log li.pol .who{color:#E28B7E}
+.log li.new{animation:fadein .35s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media (max-width:520px){.log li{grid-template-columns:44px 1fr}.log .who{grid-column:2}.log .msg{grid-column:1/-1}}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--band-line);border:1px solid var(--band-line);border-radius:5px;overflow:hidden}
+.kpi{background:var(--band-2);padding:10px 12px;display:grid;gap:4px}
+.kpi span{font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--on-band-2)}
+.kpi strong{font:700 1.3rem/1 var(--display);font-stretch:108%;color:var(--on-band);font-variant-numeric:tabular-nums}
+@media (max-width:520px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.lab-foot{font-size:.8rem;color:var(--ink-3);margin-top:14px}
+@media (max-width:980px){.lab-grid{grid-template-columns:1fr}}
+
+/* research */
+.papers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.paper{display:grid;grid-template-rows:auto auto 1fr auto;gap:12px;padding:24px;border:1px solid var(--line);border-radius:6px;background:var(--surface);text-decoration:none;color:inherit;transition:border-color .15s ease,transform .15s ease}
+.paper:hover{border-color:var(--ink-3);transform:translateY(-2px)}
+.paper .kind{font:500 .7rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
+.paper .kind em{font-style:normal;color:var(--gold);margin-left:8px}
+.paper h3{font-size:1.3rem;line-height:1.15}
+.paper p{color:var(--ink-2);font-size:.95rem}
+.paper .stat{display:flex;gap:14px;align-items:baseline;border-top:1px solid var(--line);padding-top:12px;font-size:.85rem;color:var(--ink-3)}
+.paper .stat b{font:800 1.5rem/1 var(--display);font-stretch:110%;color:var(--ink);white-space:nowrap}
+.paper .go{font:500 .8rem/1 var(--mono);color:var(--ink)}
+@media (max-width:760px){.papers{grid-template-columns:1fr}}
+
+/* footer */
+footer{background:var(--band);color:var(--on-band-2);padding-block:40px;font-size:.85rem}
+.foot-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center}
+footer .brand-name{color:var(--on-band)}
+footer .brand-sub{color:var(--on-band-2)}
+footer nav{display:flex;flex-wrap:wrap;gap:18px}
+footer nav a{text-decoration:none}
+footer nav a:hover{color:var(--on-band)}
+.legal{margin-top:24px;padding-top:20px;border-top:1px solid var(--band-line);font:400 .74rem/1.5 var(--mono)}
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="#top" aria-label="King Technology Solutions home">
+      <svg width="34" height="30" viewBox="0 0 34 30" aria-hidden="true">
+        <rect x="2" y="12" width="7" height="14" rx="1" fill="currentColor"/>
+        <rect x="13.5" y="3" width="7" height="23" rx="1" fill="var(--gold-fill)"/>
+        <rect x="25" y="12" width="7" height="14" rx="1" fill="currentColor"/>
+        <rect x="0" y="27" width="34" height="3" rx="1" fill="currentColor"/>
+      </svg>
+      <span><span class="brand-name">KING TECHNOLOGY</span><span class="brand-sub">Solutions Group</span></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav">
+      <a href="#services">Services</a>
+      <a href="#observability">Observability</a>
+      <a href="#cmdb">CMDB</a>
+      <a href="#security">Security</a>
+      <a href="#agentic">Agentic Lab</a>
+      <a href="#procurement">Procurement</a>
+      <a href="#research">Research</a>
+      <a href="#pulse">Market Pulse</a>
+      <a class="btn btn-primary" href="#contact">Start a conversation</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow"><b>Event Management</b> &nbsp;·&nbsp; CMDB &nbsp;·&nbsp; SecOps &nbsp;·&nbsp; Procurement</p>
+        <h1>The layer beneath <em>the giants.</em></h1>
+        <p class="lede">The market leaders are built for their largest accounts. King Technology Solutions takes on the work they consider too small to prioritize, and gives it the same depth they save for the Fortune 500.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#contact">Start a conversation <span class="arr">→</span></a>
+          <a class="btn btn-ghost" href="#services">See what we do</a>
+        </div>
+        <div class="pillars" aria-label="Practice areas">
+          <span class="c-obs">Event management, end to end</span>
+          <span class="c-itsm">Observability, DEX &amp; ITSM</span>
+          <span class="c-site">Agentic operations</span>
+          <span class="c-cmdb">CMDB &amp; data quality</span>
+          <span class="c-sec">Security operations</span>
+          <span class="c-proc">Zero-inventory procurement</span>
+        </div>
+      </div>
+
+      <figure class="trace" aria-label="Illustrative engagement shown as a distributed trace">
+        <div class="trace-top">
+          <span><span class="dot"></span><strong>trace</strong> new-site-bringup</span>
+          <span>spans 9 · duration 12w · status <strong>OK</strong></span>
+        </div>
+        <div class="spans">
+          <div class="span c-site"><span class="span-name"><i>engagement</i>.discovery</span><div class="track"><span class="bar" style="--s:0%;--w:12%"></span></div></div>
+          <div class="span c-obs"><span class="span-name"><i>observability</i>.assessment</span><div class="track"><span class="bar" style="--s:8%;--w:22%"></span></div></div>
+          <div class="span c-itsm"><span class="span-name"><i>itsm</i>.process-map</span><div class="track"><span class="bar" style="--s:10%;--w:24%"></span></div></div>
+          <div class="span c-proc"><span class="span-name"><i>procurement</i>.bom</span><div class="track"><span class="bar" style="--s:20%;--w:22%"></span></div></div>
+          <div class="span c-proc"><span class="span-name"><i>partner</i>.sourcing</span><div class="track"><span class="bar" style="--s:38%;--w:24%"></span></div></div>
+          <div class="span c-proc"><span class="span-name"><i>logistics</i>.staging</span><div class="track"><span class="bar" style="--s:58%;--w:18%"></span></div></div>
+          <div class="span c-site"><span class="span-name"><i>site</i>.rack-and-stack</span><div class="track"><span class="bar" style="--s:72%;--w:16%"></span></div></div>
+          <div class="span c-obs"><span class="span-name"><i>telemetry</i>.baseline</span><div class="track"><span class="bar live" style="--s:80%;--w:16%"></span></div></div>
+          <div class="span c-itsm"><span class="span-name"><i>handover</i>.runbooks</span><div class="track"><span class="bar" style="--s:90%;--w:10%"></span></div></div>
+        </div>
+        <div class="axis"><span>illustrative engagement</span><span class="axis-ticks"><span>wk0</span><span>3</span><span>6</span><span>9</span><span>12</span></span></div>
+        <div class="trace-legend">
+          <span class="c-obs">observability</span><span class="c-itsm">itsm</span><span class="c-proc">procurement</span><span class="c-site">site</span>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- WHERE WE SIT -->
+  <section class="where" id="about">
+    <div class="wrap where-grid">
+      <div class="where-copy">
+        <p class="eyebrow"><b>Where we sit</b></p>
+        <h2>Too big for break-fix. Too small for a global integrator.</h2>
+        <p>Tier-one vendors and global systems integrators are built around enterprise logos and seven-figure deals. Everyone else gets a partner portal, a reseller locator and a minimum deal size.</p>
+        <p>We work in that gap: close enough to the vendors to get you real pricing, roadmap access and escalation paths, and close enough to your team to do the work ourselves.</p>
+        <ul class="fit" aria-label="Who we work with">
+          <li>School districts and libraries planning E-Rate Category Two network refreshes</li>
+          <li>Growing companies that have outgrown break-fix IT support</li>
+          <li>IT teams running three monitoring tools and trusting none of them</li>
+          <li>Organizations opening a new office, branch or datacenter room</li>
+          <li>Business units whose vendor account team never calls back</li>
+        </ul>
+      </div>
+      <div class="stack" aria-label="Diagram: where King Technology Solutions sits">
+        <div class="tier top">
+          <span class="t-label">Layer 1</span>
+          <span class="t-name">Market leaders &amp; global integrators</span>
+          <span class="t-note">Optimized for the largest accounts. Your project is below their threshold.</span>
+        </div>
+        <div class="connector">products · programs · pricing</div>
+        <div class="tier us">
+          <span class="t-label">The enablement layer</span>
+          <span class="t-name">King Technology Solutions</span>
+          <span class="t-note">Translates vendor capability into working services: designed, sourced, deployed and observed.</span>
+        </div>
+        <div class="connector">outcomes · uptime · accountability</div>
+        <div class="tier">
+          <span class="t-label">Your organization</span>
+          <span class="t-name">Your teams, your sites, your services</span>
+          <span class="t-note">One accountable partner instead of a dozen vendor contacts.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow"><b>Services</b> &nbsp;·&nbsp; five practices, one accountable partner</p>
+        <h2>From the first signal to the last cable.</h2>
+        <p class="lede">Our flagship practice makes every signal in your environment lead to the right action. Our observability practice decides which signals are worth collecting and proves what users actually experience. Our CMDB practice makes the data behind those actions trustworthy. Our security practice defends it at machine speed. Our procurement practice builds new sites that arrive already part of all three.</p>
+      </div>
+
+      <article class="em" id="event-management">
+        <div class="em-head">
+          <div>
+            <span class="flag">Flagship practice</span>
+            <h3>Event Management Advisory &amp; Implementation</h3>
+            <p>Event management is where observability and IT service management meet: it decides which of millions of signals becomes an action, and who takes it. We design and implement it end to end, from the first raw signal to a resolved, learned-from incident. Observability and ITSM are delivered as parts of one system, not as separate projects.</p>
+            <p class="em-plat">Platform-neutral across Dynatrace, Datadog, New Relic, Nexthink, Splunk, ScienceLogic and more, with ServiceNow ITOM and ITSM as the system of action.</p>
+          </div>
+          <div class="flow" aria-label="End-to-end event management lifecycle">
+            <span class="node obs">Detect<small>telemetry</small></span><span class="sep">→</span>
+            <span class="node obs">Correlate<small>dedup, group</small></span><span class="sep">→</span>
+            <span class="node">Enrich<small>CMDB + change</small></span><span class="sep">→</span>
+            <span class="node itsm">Route<small>by service impact</small></span><span class="sep">→</span>
+            <span class="node itsm">Resolve<small>verified</small></span>
+            <span class="back">↺ every incident tunes rules, thresholds and CMDB data</span>
+          </div>
+        </div>
+        <div class="subs">
+          <div class="sub">
+            <span class="sig">metrics · logs · traces → events</span>
+            <h4>Observability Enablement</h4>
+            <ul>
+              <li>Tool and telemetry rationalization, and cost control</li>
+              <li>OpenTelemetry instrumentation strategy</li>
+              <li>SLOs mapped to business services</li>
+              <li>Digital employee experience: user impact from every device (Nexthink)</li>
+              <li>Alert and threshold tuning at the source</li>
+            </ul>
+          </div>
+          <div class="sub">
+            <span class="sig">dedup · correlate · automate</span>
+            <h4>Event Correlation &amp; Automation</h4>
+            <ul>
+              <li>Common event format across every monitoring tool</li>
+              <li>ServiceNow Event Management rules and alert correlation</li>
+              <li>Change correlation: "what changed?" answered automatically</li>
+              <li>Automated remediation for known conditions</li>
+            </ul>
+          </div>
+          <div class="sub">
+            <span class="sig">incident · problem · change</span>
+            <h4>ITSM &amp; Service Integration</h4>
+            <ul>
+              <li>Event-to-incident routing by service and owner</li>
+              <li>Incident, problem and change process design</li>
+              <li>Change correlation and risk from service impact</li>
+              <li>CMDB context for every alert (see CMDB practice)</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="em" id="observability">
+        <div class="em-head">
+          <div>
+            <span class="flag">Observability pillar</span>
+            <h3>Observability &amp; Digital Experience Modernization</h3>
+            <p>In ten years the market moved from siloed APM tools to AI-driven platforms, and much of it changed hands along the way: Cisco bought AppDynamics and then Splunk, and Palo Alto Networks bought Chronosphere. We help you get the benefit of that shift without paying for three overlapping tools. That means standardizing telemetry on OpenTelemetry, consolidating to the platform that fits, and proving what employees and customers actually experience, from the browser to the ISP to the laptop.</p>
+            <p class="em-plat">Vendor-neutral across Dynatrace, Datadog, Splunk and AppDynamics, New Relic, Elastic and Grafana, plus AWS, Azure and Google Cloud native tools. Also ThousandEyes, Catchpoint and Nexthink.</p>
+          </div>
+          <div class="flow" aria-label="Observability modernization path">
+            <span class="node">Assess<small>tools + spend</small></span><span class="sep">→</span>
+            <span class="node obs">Standardize<small>OTel + pipeline</small></span><span class="sep">→</span>
+            <span class="node obs">Consolidate<small>one platform</small></span><span class="sep">→</span>
+            <span class="node dex">Assure<small>RUM · synthetics · DEX</small></span><span class="sep">→</span>
+            <span class="node itsm">Automate<small>agents, governed</small></span>
+            <span class="back">↺ measured outcomes fund the next wave</span>
+          </div>
+        </div>
+        <div class="subs">
+          <div class="sub">
+            <span class="sig">rationalize · migrate · negotiate</span>
+            <h4>Platform &amp; Cost Rationalization</h4>
+            <ul>
+              <li>Tool-overlap and spend review scored against the 2026 market</li>
+              <li>OpenTelemetry and telemetry-pipeline design (Cribl, OTel Collector)</li>
+              <li>AppDynamics-to-Splunk convergence and renewal planning</li>
+              <li>Hyperscaler-native vs. third-party decisions for AWS, Azure and GCP</li>
+            </ul>
+          </div>
+          <div class="sub">
+            <span class="sig">browser · internet · device</span>
+            <h4>Digital Experience Assurance</h4>
+            <ul>
+              <li>Real-user monitoring and session replay tied to backend traces</li>
+              <li>Synthetic journeys as code, running in your CI/CD</li>
+              <li>Internet and SaaS path visibility: ThousandEyes, Catchpoint and alternatives</li>
+              <li>Employee experience and self-healing with Nexthink</li>
+            </ul>
+          </div>
+          <div class="sub">
+            <span class="sig">recommend → approve → act</span>
+            <h4>Agentic Operations Readiness</h4>
+            <ul>
+              <li>Autonomy-tier policy for every action class</li>
+              <li>AI SRE pilots: AWS DevOps Agent, Azure SRE Agent, Datadog, Dynatrace and more</li>
+              <li>Approval and audit workflows in ServiceNow</li>
+              <li>Observing the agents themselves: accuracy, guardrails, token cost</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="em cmdb" id="cmdb">
+        <div class="em-head">
+          <div>
+            <span class="flag">Data pillar</span>
+            <h3>CMDB &amp; Data Quality Advisory</h3>
+            <p>Most organizations don't lack CMDB tooling. They lack agreed ownership, clear source authority and a service model. We help you turn a CMDB nobody trusts into the source of truth that asset management, service mapping, event enrichment, security and now AI agents all depend on.</p>
+            <p class="em-plat">ServiceNow CMDB, CSDM, Discovery, Service Graph Connectors and the new agentic CMDB workflows, delivered with your team or your implementation partner.</p>
+          </div>
+          <div class="flow" aria-label="CMDB advisory path">
+            <span class="node">Assess<small>health + AI readiness</small></span><span class="sep">→</span>
+            <span class="node itsm">Govern<small>authority + owners</small></span><span class="sep">→</span>
+            <span class="node obs">Enable agents<small>with approvals</small></span><span class="sep">→</span>
+            <span class="node">Steward<small>KPIs + cadence</small></span>
+            <span class="back">↺ approvals relax class by class as accuracy is proven</span>
+          </div>
+        </div>
+        <div class="subs">
+          <div class="sub">
+            <span class="sig">one cmdb · many consumers</span>
+            <h4>Health &amp; Readiness Assessment</h4>
+            <ul>
+              <li>Needs mapped for asset, service mapping, events, security and AI</li>
+              <li>CMDB Health baseline: completeness, correctness, compliance</li>
+              <li>Discovery coverage and feed-health review</li>
+              <li>AI-readiness score for agentic workflows</li>
+            </ul>
+          </div>
+          <div class="sub">
+            <span class="sig">authority · ownership · csdm</span>
+            <h4>Source-of-Truth &amp; Governance</h4>
+            <ul>
+              <li>Attribute authority matrix enforced through reconciliation rules</li>
+              <li>CI class owners and a data-stewardship cadence</li>
+              <li>CSDM service model for your priority services</li>
+              <li>Lifecycle policies: retire, archive, attest, certify</li>
+            </ul>
+          </div>
+          <div class="sub">
+            <span class="sig">agents · discovery · ai assets</span>
+            <h4>Agentic CMDB &amp; Discovery</h4>
+            <ul>
+              <li>AI-assisted CI creation and de-duplication, rolled out safely</li>
+              <li>Connector recommendation and import diagnosis</li>
+              <li>Enrichment agents for owners, tags and naming</li>
+              <li>Discovery of AI models and agents into the CMDB</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="em sec" id="security">
+        <div class="em-head">
+          <div>
+            <span class="flag">Security pillar</span>
+            <h3>Security Operations (SecOps)</h3>
+            <p>Attackers now move from first access to lateral movement in minutes. We help your organization build a new modern SOC or upgrade the one you have, working through our established relationships with today's industry-leading security vendors. The goal: AI agents handle triage and routine response under governance, analysts keep control of high-impact decisions, and every alert shares the same asset and service context as IT operations.</p>
+            <p class="em-plat">Sumo Logic, Palo Alto Networks Cortex, ExtraHop, Netskope, Venafi, AppViewX and more.</p>
+          </div>
+          <div class="flow" aria-label="Modern SecOps loop">
+            <span class="node sec">Reduce exposure<small>assets, certs</small></span><span class="sep">→</span>
+            <span class="node sec">Detect<small>one data layer</small></span><span class="sep">→</span>
+            <span class="node">Investigate<small>AI-enriched</small></span><span class="sep">→</span>
+            <span class="node itsm">Contain<small>governed playbooks</small></span>
+            <span class="back">↺ every incident becomes a tested detection</span>
+          </div>
+        </div>
+        <div class="subs">
+          <div class="sub">
+            <span class="sig">siem · xdr · ai agents</span>
+            <h4>AI-Driven SOC</h4>
+            <ul>
+              <li>SIEM and analytics design and migration</li>
+              <li>Detection engineering mapped to MITRE ATT&amp;CK</li>
+              <li>Governed AI agents and playbooks with approval tiers</li>
+              <li>Security data pipelines that control SIEM cost</li>
+            </ul>
+          </div>
+          <div class="sub">
+            <span class="sig">ndr · sse · sase · firewall</span>
+            <h4>Network Detection &amp; Secure Access</h4>
+            <ul>
+              <li>Network detection and response (ExtraHop)</li>
+              <li>SSE/SASE rollout and policy design (Netskope)</li>
+              <li>Firewall design and segmentation: Palo Alto, Fortinet, Cisco, Juniper</li>
+              <li>Hardware sourced and deployed, no inventory markup</li>
+            </ul>
+          </div>
+          <div class="sub">
+            <span class="sig">certificates · keys · machine identity</span>
+            <h4>Certificate Lifecycle Management</h4>
+            <ul>
+              <li>Discovery of every certificate, with owners mapped</li>
+              <li>Automated renewal on Venafi, AppViewX and others</li>
+              <li>Ready for 100-day (2027) and 47-day (2029) certificates</li>
+              <li>Crypto-agility for the post-quantum transition</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="proc-row">
+        <div>
+          <span class="sig">bom → stage → rack → live</span>
+          <h3>Location Build-outs &amp; Procurement</h3>
+          <p>New campus, library, office or datacenter room? We specify, source and coordinate everything it needs through manufacturer and distribution partners, and deliver it already monitored and in your service desk.</p>
+        </div>
+        <ul>
+          <li>Full bill of materials for every site type</li>
+          <li>Network, SD-WAN, firewalls and wireless</li>
+          <li>Servers, virtualization and storage</li>
+          <li>Racks, power, cooling and structured cabling</li>
+          <li>Deployment through vetted implementation partners</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+
+  <!-- AGENTIC LAB -->
+  <section class="lab" id="agentic">
+    <div class="wrap lab-grid">
+      <div class="lab-copy">
+        <p class="eyebrow"><b>Agentic Lab</b> &nbsp;·&nbsp; simulation</p>
+        <h2>Watch an incident run itself, inside the guardrails you set.</h2>
+        <p>Choose a scenario and how much autonomy the agent has, then press Play. The pipeline is the same one we build: signals are correlated, enriched from the CMDB, investigated by an agent and acted on. Humans approve exactly the actions you choose.</p>
+        <div class="ctl">
+          <span class="ctl-label" id="scnLabel">Scenario</span>
+          <div class="seg" role="group" aria-labelledby="scnLabel">
+            <button type="button" id="scn-ops" data-scn="ops" aria-pressed="true">IT incident: bad deploy</button>
+            <button type="button" id="scn-sec" data-scn="sec" aria-pressed="false">Security: stolen credentials</button>
+          </div>
+        </div>
+        <div class="ctl">
+          <span class="ctl-label" id="tierLabel">Agent autonomy</span>
+          <div class="seg" role="group" aria-labelledby="tierLabel">
+            <button type="button" id="tier-1" data-tier="1" aria-pressed="false">Recommend</button>
+            <button type="button" id="tier-2" data-tier="2" aria-pressed="true">Act with approval</button>
+            <button type="button" id="tier-3" data-tier="3" aria-pressed="false">Autonomous</button>
+          </div>
+          <p class="tier-note" id="tierNote"></p>
+        </div>
+        <div class="run-row">
+          <button class="btn btn-primary" type="button" id="labPlay">Play simulation <span class="arr">▶</span></button>
+          <button class="btn btn-ghost" type="button" id="labStep">Step</button>
+          <button class="btn btn-ghost" type="button" id="labReset">Reset</button>
+        </div>
+      </div>
+
+      <figure class="console" aria-label="Simulated agentic incident console">
+        <div class="con-top">
+          <span><span class="dot"></span><strong id="conTitle">incident</strong> <span id="conSub"></span></span>
+          <span>clock <span class="clock" id="conClock">--:--</span> · status <strong id="conStatus">ready</strong></span>
+        </div>
+        <ol class="pipe" id="pipe" aria-label="Pipeline stages">
+          <li data-n="sig"><b>Signals</b>telemetry</li>
+          <li data-n="cor"><b>Correlate</b>dedupe</li>
+          <li data-n="enr"><b>Enrich</b>CMDB</li>
+          <li data-n="agt"><b>Agent</b>diagnose</li>
+          <li data-n="hum" class="human"><b>Human</b>gate</li>
+          <li data-n="act"><b>Act</b>runbook</li>
+          <li data-n="ver"><b>Verify</b>telemetry</li>
+          <li data-n="itsm"><b>ITSM</b>record</li>
+        </ol>
+        <div class="kpis">
+          <div class="kpi"><span>Elapsed</span><strong id="kElapsed">0 min</strong></div>
+          <div class="kpi"><span>Alerts in</span><strong id="kAlerts">0</strong></div>
+          <div class="kpi"><span>Incidents</span><strong id="kInc">0</strong></div>
+          <div class="kpi"><span>Human touches</span><strong id="kHuman">0</strong></div>
+        </div>
+        <ol class="log" id="log" aria-live="polite"></ol>
+      </figure>
+    </div>
+    <div class="wrap"><p class="lab-foot">Illustrative simulation built from King Tech reference designs. Timings are modeled, not measured; for a published reference point, AWS <a href="https://aws.amazon.com/blogs/mt/announcing-general-availability-of-aws-devops-agent/" target="_blank" rel="noopener">reports</a> preview customers saw up to 75% lower MTTR with its DevOps Agent. <a href="#research">Request the full white paper</a>.</p></div>
+  </section>
+
+  <!-- PROCUREMENT -->
+  <section class="band" id="procurement">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow"><b>Procurement</b> &nbsp;·&nbsp; the zero-inventory model</p>
+        <h2>Stock an entire site. <em>Carry zero inventory.</em></h2>
+        <p class="lede">We don't own a warehouse, and that's deliberate. Every order is sourced to your spec through our manufacturer and distribution relationships, so recommendations follow your requirements, not what's sitting on a shelf.</p>
+      </div>
+
+      <ol class="steps">
+        <li><strong>Scope the site</strong><span>Headcount, applications, power, space, security posture and growth plans.</span></li>
+        <li><strong>Design the BOM</strong><span>A vendor-agnostic bill of materials with good, better and best options.</span></li>
+        <li><strong>Source through partners</strong><span>Competitive quotes via authorized distribution and deal registration.</span></li>
+        <li><strong>Stage &amp; ship</strong><span>Pre-configured, labeled and delivered to arrive in install order.</span></li>
+        <li><strong>Turn up &amp; observe</strong><span>Installed, baselined and monitored before the first user logs in.</span></li>
+      </ol>
+
+      <div class="cats">
+        <div class="cat"><span class="code">DC-PHYS</span><h3>Datacenter &amp; physical</h3><p>Racks, PDUs, UPS, cooling, structured cabling, KVM and out-of-band access.</p></div>
+        <div class="cat"><span class="code">NET</span><h3>Network</h3><p>Core and access switching, routing, wireless, SD-WAN and WAN circuits.</p></div>
+        <div class="cat"><span class="code">SEC</span><h3>Security</h3><p>Next-generation firewalls and appliances from Palo Alto Networks, Fortinet, Cisco and Juniper (HPE); NAC, secure access and segmentation.</p></div>
+        <div class="cat"><span class="code">COMPUTE</span><h3>Compute &amp; virtualization</h3><p>Rack servers, hyperconverged platforms and hypervisor licensing.</p></div>
+        <div class="cat"><span class="code">STOR</span><h3>Storage &amp; protection</h3><p>SAN, NAS, object storage, backup and recovery.</p></div>
+        <div class="cat"><span class="code">WORK</span><h3>Workplace</h3><p>Endpoints, meeting rooms, displays and peripherals for day-one readiness.</p></div>
+      </div>
+
+      <div class="why">
+        <div><strong>Aligned incentives</strong><p>No stock to move means no reason to steer you toward last year's model or an overstocked brand.</p></div>
+        <div><strong>Current-generation gear</strong><p>Equipment ships from manufacturer and distribution channels with full warranty and support entitlement.</p></div>
+        <div><strong>Partner leverage</strong><p>Channel relationships built over years give you pricing and escalation paths normally reserved for much larger buyers.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENGAGEMENT -->
+  <section id="engage">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow"><b>Ways to engage</b></p>
+        <h2>Start small. Scale when it's working.</h2>
+      </div>
+      <div class="models">
+        <div class="model">
+          <span class="kind">Fixed scope</span>
+          <h3>Diagnostic</h3>
+          <p>A focused review of your monitoring stack, service management practice or site plan, with a prioritized roadmap you can act on with or without us.</p>
+          <p class="ex">e.g. an observability tool and cost review</p>
+        </div>
+        <div class="model">
+          <span class="kind">Defined outcome</span>
+          <h3>Project</h3>
+          <p>A defined result on a defined timeline: a tool migration, an ITSM rollout, or a new office taken from empty room to fully operational.</p>
+          <p class="ex">e.g. a branch build-out with SD-WAN and firewalls</p>
+        </div>
+        <div class="model">
+          <span class="kind">Ongoing</span>
+          <h3>Retained advisory</h3>
+          <p>A standing seat at your table for architecture reviews, vendor negotiations, renewals and roadmap decisions.</p>
+          <p class="ex">e.g. quarterly renewal and roadmap reviews</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIELD NOTES -->
+  <section id="notes" style="padding-top:0">
+    <div class="wrap">
+      <div class="notes-head">
+        <div class="sec-head">
+          <p class="eyebrow"><b>Field Notes</b></p>
+          <h2>Original thinking, not recycled vendor talking points.</h2>
+        </div>
+        <p class="principle">// Written from the operator's chair and the channel's side of the table, not from vendor press releases.</p>
+      </div>
+      <div class="notes">
+        <article class="note">
+          <span class="tag">Observability</span>
+          <h3>Your MTTR is a lagging indicator of your change process</h3>
+          <p>Most outages we trace back aren't monitoring failures. They're change failures that monitoring caught late. Fix the handoff, and the dashboard improves on its own.</p>
+        </article>
+        <article class="note">
+          <span class="tag">Observability · Cost</span>
+          <h3>The cheapest telemetry is the telemetry you decided not to collect</h3>
+          <p>Ingest-based pricing punishes indecision. A telemetry budget is a design decision, not a finance problem to fix at renewal.</p>
+        </article>
+        <article class="note">
+          <span class="tag">Build-outs</span>
+          <h3>Why the new office always goes live without monitoring</h3>
+          <p>Procurement closes the PO, the network team closes the ticket, and nobody owns day two. Monitoring belongs on the bill of materials.</p>
+        </article>
+        <article class="note">
+          <span class="tag">Channel</span>
+          <h3>What your reseller knows about your renewal that you don't</h3>
+          <p>Deal registration, quarter-end timing and distribution programs shape your price more than your usage does. Here's how to read the board.</p>
+        </article>
+        <article class="note">
+          <span class="tag">Agentic operations</span>
+          <h3>The CMDB is the AI project</h3>
+          <p>Agents act on topology and ownership data. A stale CMDB doesn't slow an agent down; it makes it confidently wrong, faster. Fix service models and ownership before you buy autonomy.</p>
+        </article>
+        <article class="note">
+          <span class="tag">Agentic operations</span>
+          <h3>Autonomy is earned one action class at a time</h3>
+          <p>Let an agent restart a pod long before it can roll back a release. Grant each right with approvals and an audit trail, and take it back automatically the first time it fails.</p>
+        </article>
+        <article class="note">
+          <span class="tag">Digital experience</span>
+          <h3>Measure the tickets that were never opened</h3>
+          <p>Faster ticket closure is a service-desk metric. Problems fixed on the device before anyone calls are the metric executives feel, and that is what DEX and self-healing move.</p>
+        </article>
+        <article class="note">
+          <span class="tag">Security · Observability</span>
+          <h3>Security is becoming a use of observability data</h3>
+          <p>The SOC and the NOC now collect the same logs, flows and traces. Collect once, normalize once, and route each team what it needs. Paying twice to ingest the same event is a design flaw, not a budget line.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- RESEARCH -->
+  <section id="research" style="padding-top:0">
+    <div class="wrap">
+      <div class="notes-head">
+        <div class="sec-head">
+          <p class="eyebrow"><b>Research</b> &nbsp;·&nbsp; white papers</p>
+          <h2>Ten years of the market, read from the operator's chair.</h2>
+        </div>
+        <p class="principle">// Written for client briefings. Every claim cites a public source; where we give our own assessment, we say so.</p>
+      </div>
+      <div class="papers">
+        <a class="paper" href="#contact" data-paper="Security Meets Observability, 2016–2026">
+          <span class="kind">Security <em>New · Sep 2026</em></span>
+          <h3>Security Meets Observability, 2016–2026</h3>
+          <p>How the security analytics market turned over, who bought whom, and why the SOC and the NOC now run on one data layer. Includes an agentic SOC simulation and autonomy tiers for security actions.</p>
+          <span class="stat"><b>$32B</b> Google’s Wiz acquisition, closed March 2026: cloud security joins the data platforms</span>
+          <span class="go">Request a copy →</span>
+        </a>
+        <a class="paper" href="#contact" data-paper="Modern Observability &amp; DEX, 2016–2026">
+          <span class="kind">Observability <em>Updated · Sep 2026</em></span>
+          <h3>Modern Observability &amp; DEX, 2016–2026</h3>
+          <p>The 2026 platform landscape, hyperscaler tools, Nexthink and DEX, RUM and synthetics, ThousandEyes and its rivals, AppDynamics then and now, and a minute-by-minute agentic incident.</p>
+          <span class="stat"><b>~$3.0B</b> Palo Alto’s Chronosphere purchase: security vendors now buy observability</span>
+          <span class="go">Request a copy →</span>
+        </a>
+        <a class="paper" href="#contact" data-paper="Event Management, End to End">
+          <span class="kind">Event Management</span>
+          <h3>Event Management, End to End</h3>
+          <p>How a raw signal becomes a routed, resolved and learned-from incident, and where observability and ITSM have to be designed as one system.</p>
+          <span class="stat"><b>1 system</b> observability and ITSM delivered together, not as two projects</span>
+          <span class="go">Request a copy →</span>
+        </a>
+        <a class="paper" href="#contact" data-paper="Modern SecOps in the Age of AI">
+          <span class="kind">SecOps</span>
+          <h3>Modern SecOps in the Age of AI</h3>
+          <p>Building or upgrading a SOC where AI agents handle triage under governance and analysts keep control of high-impact decisions.</p>
+          <span class="stat"><b>Minutes</b> from first access to lateral movement, which is why triage has to run at machine speed</span>
+          <span class="go">Request a copy →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARKET PULSE -->
+  <section class="pulse" id="pulse">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow"><b>Market Pulse</b> &nbsp;·&nbsp; edition of Sep 23, 2026</p>
+        <h2>What moved this month, and what it means for you.</h2>
+        <p class="lede">The vendor deals, licensing changes and funding signals shaping IT for businesses and public organizations alike, read from the practitioner's side of the table.</p>
+      </div>
+      <div class="pulse-grid">
+        <div class="moves">
+          <article class="move"><time datetime="2026-11-01">Coming Nov 1</time><div><span class="tag">Networking</span><h3>Juniper's partner program folds into HPE's</h3><p>HPE closed its Juniper acquisition in July 2025. From Nov 1, Juniper partners move to HPE Partner Ready Vantage. <b>What it means:</b> if your firewalls or switches are Juniper, confirm your reseller's standing and support path before your next renewal or E-Rate bid.</p></div></article>
+          <article class="move"><time datetime="2026-09-15">Sep 15, 2026</time><div><span class="tag">Observability · Security</span><h3>Cisco brings Splunk AI on premises and starts metering AI tokens</h3><p>At .conf26, Cisco launched AI POD for Splunk (on-prem and air-gapped), expanded Agent Observability with token-cost tracking, and added a Network Intelligence App that puts Cisco network topology inside Splunk. <b>What it means:</b> regulated and public-sector teams can now run AI-assisted SOC and NOC work without sending data to the cloud. If you run AppDynamics, plan your roadmap around Splunk. <a class="src" href="https://www.networkworld.com/article/4222333/cisco-brings-splunk-ai-on-premises-expands-agent-observability-monitors-token-costs.html" target="_blank" rel="noopener">Source: Network World</a></p></div></article>
+          <article class="move"><time datetime="2026-08-21">Aug 21, 2026</time><div><span class="tag">E-Rate</span><h3>FY2027 Category Two requests are already posting in Texas</h3><p>The first Texas FY2027 equipment request went up in August, well ahead of the winter filing window. <b>What it means:</b> districts planning a network refresh on their five-year budget ($201.57 per student, $30,175 floor) should size needs now, while vendors are available and pricing is unhurried.</p></div></article>
+          <article class="move"><time datetime="2026-05-02">May 2, 2026</time><div><span class="tag">Funding</span><h3>North Texas voters approve billions in school and city bonds</h3><p>Dallas ISD's $6.2B bond and Fort Worth's $845M bond both passed; Arlington ISD approved its technology proposition, and Irving ISD's $40M technology proposition is on the Nov 3 ballot. <b>What it means:</b> new schools, fire stations and a 911 center are an opening to build infrastructure that's monitored from the first day.</p></div></article>
+          <article class="move"><time datetime="2026-04-01">Apr 2026</time><div><span class="tag">ServiceNow</span><h3>ITOM licensing reorganized into two tiers</h3><p>Reported as two tiers: ITOM Advanced for visibility (Discovery, Service Mapping) and ITOM Prime, which adds Event Management, Metric Intelligence and Health Log Analytics. <b>What it means:</b> confirm your tier with your account team before designing event correlation; it decides where correlation can run.</p></div></article>
+          <article class="move"><time datetime="2026-03-31">Mar 31, 2026</time><div><span class="tag">Observability · AI</span><h3>AWS makes its DevOps Agent generally available</h3><p>The agent starts investigating on its own when an alarm or ticket fires, across AWS, Azure and on-premises systems, and works with tools such as Datadog, Dynatrace, New Relic, Splunk, ServiceNow and PagerDuty. <b>What it means:</b> AI incident investigation is now a standard cloud service. Pilot it in recommend-only mode, and fix topology and CMDB data first, because the agent is only as good as the context it reads. <a class="src" href="https://aws.amazon.com/blogs/mt/announcing-general-availability-of-aws-devops-agent/" target="_blank" rel="noopener">Source: AWS</a></p></div></article>
+          <article class="move"><time datetime="2026-03-15">Mar 15, 2026</time><div><span class="tag">Security</span><h3>Public TLS certificates now max out at 200 days</h3><p>Under CA/Browser Forum Ballot SC-081v3, the limit drops to 100 days on Mar 15, 2027 and 47 days in 2029. <b>What it means:</b> any certificate still renewed by hand is an outage waiting to happen. Discovery and automation should start this school year.</p></div></article>
+          <article class="move"><time datetime="2026-03-11">Mar 11, 2026</time><div><span class="tag">Security</span><h3>Google completes its $32 billion Wiz acquisition</h3><p>Wiz keeps its brand and continues to support AWS, Azure and Oracle Cloud alongside Google Cloud. <b>What it means:</b> if Wiz secures your cloud estate, ask for multicloud support commitments in writing at your next renewal. <a class="src" href="https://www.cybersecuritydive.com/news/google-32-billion-acquisition-wiz/814437/" target="_blank" rel="noopener">Source: Cybersecurity Dive</a></p></div></article>
+          <article class="move"><time datetime="2026-02-11">Feb 11, 2026</time><div><span class="tag">Security</span><h3>Palo Alto Networks completes its CyberArk acquisition</h3><p>CyberArk, which bought Venafi in 2024, is now part of Palo Alto Networks. <b>What it means:</b> if you run Venafi for certificates or CyberArk for privileged access, expect roadmap and licensing changes; review renewal terms before signing multi-year deals.</p></div></article>
+          <article class="move"><time datetime="2026-01-29">Jan 29, 2026</time><div><span class="tag">Observability · Security</span><h3>Palo Alto Networks completes its Chronosphere acquisition</h3><p>The roughly $3.0 billion deal puts a cloud-native observability platform inside a security company, with plans to connect it to Palo Alto's Cortex AgentiX agents. <b>What it means:</b> observability and security data are converging on shared platforms. If you run Chronosphere, review roadmap and renewal terms; if you're choosing a platform, design the data pipeline so either team can use it. <a class="src" href="https://www.paloaltonetworks.com/company/press/2026/palo-alto-networks-completes-chronosphere-acquisition--unifying-observability-and-security-for-the-ai-era" target="_blank" rel="noopener">Source: Palo Alto Networks</a></p></div></article>
+        </div>
+        <aside class="index" aria-label="King Tech Ecosystem Index">
+          <h3>Ecosystem Index</h3>
+          <p class="ix-sub">The publicly traded platforms our customers run. Weekly moves with context.</p>
+          <table>
+            <thead><tr><th>Ticker</th><th>Company</th><th>Week</th></tr></thead>
+            <tbody>
+              <tr><td>NOW</td><td>ServiceNow</td><td>—</td></tr>
+              <tr><td>DDOG</td><td>Datadog</td><td>—</td></tr>
+              <tr><td>DT</td><td>Dynatrace</td><td>—</td></tr>
+              <tr><td>PANW</td><td>Palo Alto Networks</td><td>—</td></tr>
+              <tr><td>FTNT</td><td>Fortinet</td><td>—</td></tr>
+              <tr><td>CRWD</td><td>CrowdStrike</td><td>—</td></tr>
+              <tr><td>CSCO</td><td>Cisco</td><td>—</td></tr>
+              <tr><td>HPE</td><td>Hewlett Packard Enterprise</td><td>—</td></tr>
+            </tbody>
+          </table>
+          <p class="ix-note">Weekly closing moves begin with the first weekly edition. For context only; not investment advice.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDER -->
+  <section class="founder">
+    <div class="wrap founder-grid">
+      <div>
+        <p class="eyebrow" style="margin-bottom:18px"><b>Why King Tech</b></p>
+        <p class="quote">Practitioner-led. <em>Vendor-connected.</em> Accountable to you.</p>
+        <div class="founder-card">
+          <p class="f-bio">King Technology Solutions is led by practitioners, not resellers. Our leadership brings 15+ years of enterprise observability and ITSM delivery, public-sector professional services for federal, state, municipal and utility customers, and years inside the technology vendor channel.</p>
+          <p class="f-role" style="margin-top:12px">Leadership · John King, Founder &amp; Principal Architect</p>
+        </div>
+      </div>
+      <dl class="creds">
+        <div class="cred"><dt>Public-sector delivery</dt><dd>Hands-on delivery for federal, state, city, municipal and utility customers, including observability built to NERC-aligned compliance and access-control requirements.</dd></div>
+        <div class="cred"><dt>Operator depth</dt><dd>Dynatrace, ScienceLogic, Splunk, Cribl, OpenTelemetry and more: architecture, rollout, tools rationalization and alert tuning at airline, broadcast and global-enterprise scale.</dd></div>
+        <div class="cred"><dt>ITSM integration</dt><dd>Led a global ServiceNow ITOM/ITSM rollout (event, incident, problem, change, CMDB) and built monitoring-to-ticket integrations that connect signals to the people who fix them.</dd></div>
+        <div class="cred"><dt>Channel fluency</dt><dd>Years inside a vendor channel partner. We know how deal registration, distribution and partner tiers actually shape your price and support.</dd></div>
+        <div class="cred"><dt>Independent by design</dt><dd>No inventory and no quota on any single brand. The recommendation is whatever fits your environment best.</dd></div>
+        <div class="cred"><dt>One throat to choke</dt><dd>One accountable partner across design, sourcing, deployment and day-two operations.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-side">
+        <p class="eyebrow"><b>Contact</b></p>
+        <h2>Tell us what you're building.</h2>
+        <p>A monitoring stack that has sprawled, a service desk that needs structure, or a new site that has to be live by a hard date. Start with a 30-minute conversation. No slide deck required.</p>
+        <div class="mail">
+          <code id="email">hello@kingtechsolutionsgroup.com</code>
+          <button class="copy" id="copyBtn" type="button">Copy</button>
+        </div>
+        <p class="eyebrow">KingTechSolutionsGroup.com</p>
+      </div>
+      <form id="contactForm" data-endpoint="https://formspree.io/f/xljdlwzr" action="https://formspree.io/f/xljdlwzr" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="New inquiry from KingTechSolutionsGroup.com">
+        <input type="text" id="f-gotcha" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+        <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="f-company">Company</label><input id="f-company" name="company" autocomplete="organization"></div>
+        <div class="field full"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field full"><label for="f-need">What do you need help with?</label>
+          <select id="f-need" name="need">
+            <option>Event management (observability + ITSM)</option>
+            <option>Observability &amp; digital experience modernization</option>
+            <option>Agentic operations readiness</option>
+            <option>White paper or briefing request</option>
+            <option>ServiceNow CMDB &amp; data quality</option>
+            <option>Security operations (SIEM, NDR, SASE, certificates)</option>
+            <option>Firewalls &amp; security hardware</option>
+            <option>New office, branch or datacenter build-out</option>
+            <option>Hardware or software procurement</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field full"><label for="f-msg">Tell us a bit more</label><textarea id="f-msg" name="message" placeholder="Timeline, number of sites, tools you run today…"></textarea></div>
+        <div class="form-foot">
+          <button class="btn btn-primary" type="submit">Send message <span class="arr">→</span></button>
+          <span class="status" id="formStatus" role="status" aria-live="polite"></span>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <a class="brand" href="#top" style="color:var(--on-band)">
+        <svg width="28" height="25" viewBox="0 0 34 30" aria-hidden="true">
+          <rect x="2" y="12" width="7" height="14" rx="1" fill="currentColor"/>
+          <rect x="13.5" y="3" width="7" height="23" rx="1" fill="var(--gold-fill)"/>
+          <rect x="25" y="12" width="7" height="14" rx="1" fill="currentColor"/>
+          <rect x="0" y="27" width="34" height="3" rx="1" fill="currentColor"/>
+        </svg>
+        <span><span class="brand-name">KING TECHNOLOGY</span><span class="brand-sub">Solutions Group</span></span>
+      </a>
+      <nav aria-label="Footer">
+        <a href="#services">Services</a><a href="#cmdb">CMDB</a><a href="#agentic">Agentic Lab</a><a href="#procurement">Procurement</a><a href="#research">Research</a><a href="#engage">Engage</a><a href="#notes">Field Notes</a><a href="#pulse">Market Pulse</a><a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <p class="legal">© <span id="yr">2026</span> King Technology Solutions LLC · KingTechSolutionsGroup.com · All product names, logos and trademarks belong to their respective owners and are used for identification only; their use does not imply endorsement. Market commentary is based on public sources as of the date shown and is not investment or legal advice.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('menuBtn'),nav=document.getElementById('nav');
+  btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o);btn.textContent=o?'Close':'Menu';});
+  nav.addEventListener('click',function(e){if(e.target.tagName==='A'){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.textContent='Menu';}});
+
+  document.getElementById('yr').textContent=new Date().getFullYear();
+
+  var copyBtn=document.getElementById('copyBtn'),email=document.getElementById('email');
+  copyBtn.addEventListener('click',function(){
+    var t=email.textContent;
+    var done=function(){copyBtn.textContent='Copied';setTimeout(function(){copyBtn.textContent='Copy';},1600);};
+    var fallback=function(){var r=document.createRange();r.selectNodeContents(email);var s=getSelection();s.removeAllRanges();s.addRange(r);copyBtn.textContent='Selected';};
+    try{navigator.clipboard.writeText(t).then(done,fallback);}catch(e){fallback();}
+  });
+
+  var form=document.getElementById('contactForm'),status=document.getElementById('formStatus');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    status.className='status';
+    var name=form.elements['name'].value.trim(),mail=form.elements['email'].value.trim();
+    if(!name||!/^\S+@\S+\.\S+$/.test(mail)){status.textContent='Add your name and a valid work email so we can reply.';return;}
+    var endpoint=form.dataset.endpoint;
+    if(!endpoint){
+      status.textContent='This form isn’t connected to an inbox yet. Please email '+email.textContent+' directly.';
+      return;
+    }
+    status.textContent='Sending…';
+    fetch(endpoint,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)})
+      .then(function(r){if(!r.ok)throw 0;form.reset();status.className='status ok';status.textContent='Thanks. We’ll reply within one business day.';})
+      .catch(function(){status.textContent='That didn’t go through. Please email '+email.textContent+' directly.';});
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var S={
+    ops:{title:'checkout-latency',sub:'· payments',base:[2,47],alerts:212,
+      tiers:{1:'The agent finds the cause and proposes a fix. An on-call engineer is paged and does the rollback by hand.',
+             2:'The agent prepares the rollback. One approval click from the owning team runs it.',
+             3:'A rollback is reversible and affects one service, so policy lets the agent act alone. The team is notified.'},
+      steps:function(t){var a=[
+        {n:'sig',at:0,who:'signal',m:'SLO burn alert: checkout p95 +300%. 212 related alerts from APM, logs and infra.'},
+        {n:'cor',at:0.5,who:'correlate',m:'212 alerts merged into 1 situation, grouped by topology and time.',inc:1},
+        {n:'enr',at:1,who:'cmdb',m:'CI: checkout service. Owner: Payments team. Change: deploy v4.18 at 02:31.'},
+        {n:'agt',at:6,who:'agent',m:'Traces and deploy diff analyzed. Root cause: DB pool size cut from 50 to 5 in v4.18 (92% confidence).'}];
+        if(t==1){a.push({n:'hum',at:9,who:'on-call',h:1,m:'Paged. Engineer acknowledges and reads the agent’s summary.'},
+                        {n:'hum',at:18,who:'on-call',h:1,m:'Engineer confirms the diagnosis and starts a manual rollback.'},
+                        {n:'act',at:21,who:'on-call',h:1,m:'Rollback to v4.17 executed by hand through the pipeline.'},
+                        {n:'ver',at:28,who:'verify',m:'p95 back within SLO. Error budget burn stopped.'},
+                        {n:'itsm',at:30,who:'itsm',m:'Incident resolved. Timeline and postmortem draft attached; change linked in CMDB.',done:1});}
+        else if(t==2){a.push({n:'hum',at:8,who:'approver',h:1,m:'Payments lead approves the proposed rollback (blast radius: 1 service).'},
+                        {n:'act',at:9,who:'agent',m:'Rollback to v4.17 executed via pipeline.'},
+                        {n:'ver',at:15,who:'verify',m:'p95 back within SLO. Error budget burn stopped.'},
+                        {n:'itsm',at:16,who:'itsm',m:'Incident resolved. Timeline and postmortem draft attached; change linked in CMDB.',done:1});}
+        else {a.push({n:'hum',at:6,who:'policy',pol:1,skip:1,m:'Tier 3 allowed: reversible, single service, rollback tested. No approval needed; owner notified.'},
+                        {n:'act',at:6.5,who:'agent',m:'Rollback to v4.17 executed via pipeline.'},
+                        {n:'ver',at:12,who:'verify',m:'p95 back within SLO. Error budget burn stopped.'},
+                        {n:'itsm',at:13,who:'itsm',m:'Incident resolved. Timeline and postmortem draft attached; change linked in CMDB.',done:1});}
+        return a;}},
+    sec:{title:'credential-theft',sub:'· finance',base:[9,12],alerts:37,
+      tiers:{1:'The agent scores the case and recommends containment. An analyst performs every action.',
+             2:'Host isolation is reversible and runs automatically. Identity actions wait for one analyst approval.',
+             3:'Even at full autonomy, policy keeps identity actions behind a human, because they affect a person’s access.'},
+      steps:function(t){var a=[
+        {n:'sig',at:0,who:'signal',m:'Impossible-travel sign-in for a finance user. EDR flags credential dumping on FIN-LT-042.'},
+        {n:'cor',at:1,who:'correlate',m:'Identity and endpoint alerts joined into 1 case for the same user.',inc:1},
+        {n:'enr',at:2,who:'cmdb',m:'FIN-LT-042 is a finance laptop. The user holds ERP admin rights.'},
+        {n:'agt',at:3,who:'agent',m:'Severity high, 94% likely true positive. Technique mapped to MITRE ATT&CK T1003.'}];
+        if(t==1){a.push({n:'hum',at:9,who:'analyst',h:1,m:'Analyst reviews the case and isolates FIN-LT-042.'},
+                        {n:'act',at:16,who:'analyst',h:1,m:'Analyst revokes sessions and forces a password reset.'},
+                        {n:'ver',at:24,who:'agent',m:'Hunt across all endpoints for the same technique: 0 hits.'},
+                        {n:'itsm',at:26,who:'itsm',h:1,m:'Security incident opened, plus a linked IT task to reimage the laptop.',done:1});}
+        else {a.push({n:'act',at:3.5,who:'agent',m:'Tier 3 action: FIN-LT-042 isolated from the network (reversible).'});
+              if(t==3)a.push({n:'hum',at:4,who:'policy',pol:1,m:'Identity actions always need approval, even at full autonomy.'});
+              a.push({n:'hum',at:6,who:'analyst',h:1,m:'Analyst approves: revoke sessions, force password reset.'},
+                     {n:'act',at:6.5,who:'agent',m:'Sessions revoked; password reset enforced at the identity provider.'},
+                     {n:'ver',at:10,who:'agent',m:'Hunt across all endpoints for the same technique: 0 hits.'},
+                     {n:'itsm',at:11,who:'itsm',m:'Security incident opened, plus a linked IT task to reimage the laptop.',done:1});}
+        return a;}}
+  };
+  var scn='ops',tier=2,steps=[],i=0,timer=null;
+  var $=function(id){return document.getElementById(id);};
+  var pipe=$('pipe'),log=$('log');
+  function fmt(base,min){var t=base[0]*60+base[1]+Math.round(min);var h=Math.floor(t/60)%24,m=t%60;return (h<10?'0':'')+h+':'+(m<10?'0':'')+m;}
+  function load(){
+    stop();var d=S[scn];steps=d.steps(tier);i=0;log.innerHTML='';
+    $('conTitle').textContent=d.title;$('conSub').textContent=d.sub;$('tierNote').textContent=d.tiers[tier];
+    Array.prototype.forEach.call(pipe.children,function(li){li.className=li.dataset.n==='hum'?'human':'';});
+    $('conClock').textContent=fmt(d.base,0);$('conStatus').textContent='ready';
+    $('kElapsed').textContent='0 min';$('kAlerts').textContent='0';$('kInc').textContent='0';$('kHuman').textContent='0';
+    $('labPlay').innerHTML='Play simulation <span class="arr">▶</span>';
+  }
+  var human=0,inc=0;
+  function apply(k,anim){
+    var s=steps[k],d=S[scn];if(!s)return;
+    if(k===0){human=0;inc=0;}
+    Array.prototype.forEach.call(pipe.children,function(li){li.classList.remove('now');});
+    var li=pipe.querySelector('[data-n="'+s.n+'"]');
+    li.classList.add('now','done');if(s.skip)li.classList.add('skip');
+    Array.prototype.forEach.call(pipe.children,function(x){if(x!==li&&x.classList.contains('done'))x.classList.remove('now');});
+    if(s.h)human++;if(s.inc)inc=s.inc;
+    var row=document.createElement('li');
+    if(s.h)row.className='h';if(s.pol)row.className='pol';if(anim&&!reduce)row.classList.add('new');
+    row.innerHTML='<time>'+fmt(d.base,s.at)+'</time><span class="who">'+s.who+'</span><span class="msg"></span>';
+    row.querySelector('.msg').textContent=s.m;log.appendChild(row);log.scrollTop=log.scrollHeight;
+    $('conClock').textContent=fmt(d.base,s.at);
+    $('kElapsed').textContent=(Math.round(s.at*10)/10)+' min';
+    $('kAlerts').textContent=d.alerts;$('kInc').textContent=inc;$('kHuman').textContent=human;
+    $('conStatus').textContent=s.done?'resolved':'running';
+    if(s.done)li.classList.remove('now');
+  }
+  function stop(){if(timer){clearTimeout(timer);timer=null;}}
+  function next(anim){if(i>=steps.length)return false;apply(i,anim);i++;return i<steps.length;}
+  function play(){
+    if(timer){stop();$('labPlay').innerHTML='Resume <span class="arr">▶</span>';return;}
+    if(i>=steps.length){load();}
+    $('labPlay').innerHTML='Pause <span class="arr">❚❚</span>';
+    var tick=function(){var more=next(true);if(more){timer=setTimeout(tick,reduce?60:1100);}else{timer=null;$('labPlay').innerHTML='Replay <span class="arr">↻</span>';}};
+    tick();
+  }
+  function renderAll(){load();while(next(false)){} $('labPlay').innerHTML='Replay <span class="arr">↻</span>';}
+  function press(group,btn){Array.prototype.forEach.call(document.querySelectorAll(group),function(b){b.setAttribute('aria-pressed',b===btn?'true':'false');});}
+  Array.prototype.forEach.call(document.querySelectorAll('[data-scn]'),function(b){b.addEventListener('click',function(){scn=b.dataset.scn;press('[data-scn]',b);renderAll();});});
+  Array.prototype.forEach.call(document.querySelectorAll('[data-tier]'),function(b){b.addEventListener('click',function(){tier=+b.dataset.tier;press('[data-tier]',b);renderAll();});});
+  $('labPlay').addEventListener('click',play);
+  $('labStep').addEventListener('click',function(){stop();if(i>=steps.length)load();next(true);$('labPlay').innerHTML=i>=steps.length?'Replay <span class="arr">↻</span>':'Resume <span class="arr">▶</span>';});
+  $('labReset').addEventListener('click',load);
+  renderAll();
+})();
+</script>
+
+<script>
+(function(){
+  var sel=document.getElementById('f-need'),msg=document.getElementById('f-msg');
+  Array.prototype.forEach.call(document.querySelectorAll('.paper[data-paper]'),function(a){
+    a.addEventListener('click',function(){
+      sel.value='White paper or briefing request';
+      var line='Please send me a copy of: '+a.dataset.paper.replace(/&amp;/g,'&');
+      if(msg.value.indexOf(line)<0)msg.value=(msg.value?msg.value+'\n':'')+line;
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
