@@ -1,26 +1,23 @@
 # King Technology Solutions website
 
-Source for **https://www.kingtechsolutionsgroup.com/**, the King Technology Solutions LLC site.
+The King Technology Solutions LLC website.
+
+| | |
+| --- | --- |
+| **Live site** | https://www.kingtechsolutionsgroup.com/ |
+| **Cloudflare Pages URL** | https://kts-website-7xz.pages.dev |
+| **Plain domain** | https://kingtechsolutionsgroup.com forwards (301) to the www address |
 
 ## How it works
 
 - **Static site.** The whole site is one hand-written `index.html` (inline CSS and JavaScript), plus `robots.txt` and `sitemap.xml`. There is no framework and no dependencies.
 - **No build step.** Files are served exactly as they are in the repository. The output directory is the repository root (`/`).
-- **Hosted on Cloudflare Pages.** Cloudflare Pages is connected to this repository and deploys `main` to production automatically. Every pull request gets its own preview URL, so changes can be checked before they go live.
 - **Contact form.** The form posts to Formspree (`https://formspree.io/f/xljdlwzr`). Don't change that endpoint without updating the Formspree account.
+- **Canonical address.** The canonical link in `index.html`, `sitemap.xml` and `robots.txt` all use `https://www.kingtechsolutionsgroup.com/`. Keep them that way.
 
-## Making changes
+## Hosting
 
-All changes go through pull requests. `main` is protected: nothing is pushed to it directly, and every pull request needs **John's approval** before it can be merged.
-
-1. Create a branch from `main`.
-2. Edit the files (usually `index.html`) and open a pull request.
-3. Check the Cloudflare Pages preview link posted on the pull request.
-4. John reviews and approves; then merge. Cloudflare deploys `main` within a minute or two.
-
-To preview locally, open `index.html` in a browser, or run `python3 -m http.server` in the repository root and visit http://localhost:8000.
-
-## Cloudflare Pages settings
+**Cloudflare Pages** (project `kts-website`) is connected to this repository.
 
 | Setting | Value |
 | --- | --- |
@@ -30,6 +27,25 @@ To preview locally, open `index.html` in a browser, or run `python3 -m http.serv
 | Build output directory | `/` |
 | Custom domain | `www.kingtechsolutionsgroup.com` |
 
-## DNS
+Every merge to `main` deploys to production. Every pull request gets its own preview URL.
 
-The domain's DNS is hosted at GoDaddy. The website needs only a `www` CNAME pointing to the Cloudflare Pages project. The existing Microsoft 365 email records (MX, SPF, DKIM, DMARC, autodiscover) must not be changed.
+## DNS (GoDaddy)
+
+DNS stays at GoDaddy. The website uses only two things there:
+
+- a `www` CNAME record pointing to `kts-website-7xz.pages.dev`
+- GoDaddy domain forwarding, which sends `kingtechsolutionsgroup.com` to `https://www.kingtechsolutionsgroup.com` with a 301 redirect
+
+**Never change the Microsoft 365 email records** (MX, SPF, DKIM, DMARC, autodiscover). Website work never needs them.
+
+## Updating the site
+
+`main` is protected. Nothing is pushed to it directly; every change goes through a pull request that John reviews and merges.
+
+1. **Branch.** Make the change on a new branch from `main`, usually by editing `index.html`.
+2. **Pull request.** Open a pull request into `main`.
+3. **Preview.** Cloudflare Pages builds the branch and posts a preview link on the pull request. Check the change there.
+4. **Review and merge.** John reviews the pull request and merges it.
+5. **Live.** Cloudflare deploys `main` to https://www.kingtechsolutionsgroup.com in about a minute.
+
+To preview locally, open `index.html` in a browser, or run `python3 -m http.server` in the repository root and visit http://localhost:8000.
