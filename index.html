@@ -299,12 +299,17 @@ section{padding-block:clamp(64px,9vw,112px)}
 .mail code{font:500 .95rem/1.3 var(--mono);user-select:all;word-break:break-all}
 .copy{margin-left:auto;background:none;border:1px solid var(--line);border-radius:4px;color:var(--ink-2);font:500 .75rem/1 var(--mono);padding:8px 10px;cursor:pointer}
 form{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:clamp(20px,3.5vw,32px);display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.field{display:grid;gap:6px}
+.field{display:grid;gap:6px;align-content:start}
 .field.full{grid-column:1/-1}
 label{font:500 .74rem/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
 input,select,textarea{font:400 1rem/1.4 var(--body);color:var(--ink);background:var(--ground);border:1px solid var(--line);border-radius:4px;padding:12px;width:100%}
 textarea{min-height:120px;resize:vertical}
 input:focus,select:focus,textarea:focus{outline:2px solid var(--focus);outline-offset:0;border-color:transparent}
+input[type=date]{-webkit-appearance:none;appearance:none;height:calc(1.4em + 26px);text-align:left}
+input[type=date]::-webkit-date-and-time-value{text-align:left}
+input:disabled{background:color-mix(in srgb,var(--line) 55%,var(--surface));color:var(--ink-3);border-color:var(--line);cursor:not-allowed}
+.check{display:flex;align-items:center;gap:8px;justify-self:start;margin-top:4px;cursor:pointer}
+.check input{width:16px;height:16px;padding:0;margin:0;flex:none;accent-color:var(--ink);cursor:pointer}
 .form-foot{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:14px}
 .status{font-size:.9rem;color:var(--ink-2)}
 .status.ok{color:var(--teal)}
@@ -835,7 +840,8 @@ footer nav a:hover{color:var(--on-band)}
         <div class="field"><label for="q-email">Work email</label><input id="q-email" name="email" type="email" autocomplete="email" required></div>
         <div class="field"><label for="q-phone">Phone (optional)</label><input id="q-phone" name="phone" type="tel" autocomplete="tel"></div>
         <div class="field full"><label for="q-items">What do you need?</label><textarea id="q-items" name="items" required placeholder="Part numbers and quantities, or a description: e.g. 4 core switches for a 200-person office"></textarea></div>
-        <div class="field"><label for="q-date">Needed by</label><input id="q-date" name="needed_by" placeholder="Date, or 'no rush'"></div>
+        <div class="field"><label for="q-date">Needed by</label><input id="q-date" name="needed_by" type="date">
+          <label class="check" for="q-norush"><input id="q-norush" name="no_rush" type="checkbox" value="Yes"> No rush</label></div>
         <div class="field"><label for="q-zip">Delivery ZIP code</label><input id="q-zip" name="delivery_zip" inputmode="numeric" autocomplete="postal-code"></div>
         <div class="field"><label for="q-type">Organization type</label>
           <select id="q-type" name="organization_type">
@@ -1161,6 +1167,15 @@ footer nav a:hover{color:var(--on-band)}
   });
 
   var qForm=document.getElementById('quoteForm'),qStatus=document.getElementById('quoteStatus');
+  var qDate=document.getElementById('q-date'),qNoRush=document.getElementById('q-norush');
+  if(qDate){
+    var d=new Date();
+    qDate.min=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+    if(qNoRush)qNoRush.addEventListener('change',function(){
+      if(qNoRush.checked)qDate.value='';
+      qDate.disabled=qNoRush.checked;
+    });
+  }
   if(qForm)qForm.addEventListener('submit',function(e){
     e.preventDefault();
     qStatus.className='status';
@@ -1168,7 +1183,7 @@ footer nav a:hover{color:var(--on-band)}
     if(!n||!/^\S+@\S+\.\S+$/.test(m)||!items){qStatus.textContent='Add your name, a valid work email and what you need quoted.';return;}
     qStatus.textContent='Sending…';
     fetch(qForm.dataset.endpoint,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(qForm)})
-      .then(function(r){if(!r.ok)throw 0;qForm.reset();qStatus.className='status ok';qStatus.textContent='Thanks. We’ll reply within one business day.';})
+      .then(function(r){if(!r.ok)throw 0;qForm.reset();if(qDate)qDate.disabled=false;qStatus.className='status ok';qStatus.textContent='Thanks. We’ll reply within one business day.';})
       .catch(function(){qStatus.textContent='That didn’t go through. Please email '+email.textContent+' directly.';});
   });
 })();
