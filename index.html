@@ -820,7 +820,7 @@ footer nav a:hover{color:var(--on-band)}
     <div class="wrap contact-grid">
       <div class="contact-side">
         <p class="eyebrow"><b>Hardware quote</b></p>
-        <h2>Need equipment? Get a quote in one business day.</h2>
+        <h2>Need equipment? Request a quote.</h2>
         <p>Switches, firewalls, wireless, servers, storage, GPUs, memory or accessories. Send a part number and quantity, or describe what you need and we'll recommend options.</p>
         <p>Quotes are firm for the period stated on them. Memory, storage and GPU prices are moving quickly, so those quotes carry shorter validity.</p>
         <p class="eyebrow">Purchase orders welcome &nbsp;·&nbsp; tax-exempt buyers supported</p>
@@ -1166,7 +1166,7 @@ footer nav a:hover{color:var(--on-band)}
     if(!n||!/^\S+@\S+\.\S+$/.test(m)||!items){qStatus.textContent='Add your name, a valid work email and what you need quoted.';return;}
     qStatus.textContent='Sending…';
     fetch(qForm.dataset.endpoint,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(qForm)})
-      .then(function(r){if(!r.ok)throw 0;qForm.reset();qStatus.className='status ok';qStatus.textContent='Thanks. Your quote will arrive within one business day.';})
+      .then(function(r){if(!r.ok)throw 0;qForm.reset();qStatus.className='status ok';qStatus.textContent='Thanks. We’ll reply within one business day.';})
       .catch(function(){qStatus.textContent='That didn’t go through. Please email '+email.textContent+' directly.';});
   });
 })();
